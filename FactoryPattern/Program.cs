@@ -54,8 +54,86 @@ namespace FactoryPattern
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, How many tires are on your vehicle do you desire?");
+            bool input;
+            bool input2;
 
-            var userInput = Console.ReadLine();
+            input = int.TryParse(Console.ReadLine(), out int result);
+            if (input == false)
+            {
+                Console.WriteLine("Not a valid input. Please try again with the correct option. Enter: 0, 1, 2, 3, 4, 6, 18.");
+            }
+            Console.WriteLine("----------------------------------");
+            switch (result)
+            {
+                case 0:
+                    Console.WriteLine("I don't have a car :(");
+                    break;
+                case 1:
+                    Console.WriteLine("I have a unicycle");
+                    IVehicle unicylce = VehicleFactory.GetVehicle(result);
+                    unicylce.Drive();
+                    break;
+                case 2:
+                    Console.WriteLine("Its a motorcycle not a bike, I promise!");
+                    IVehicle motorcycle = VehicleFactory.GetVehicle(result);
+                    motorcycle.Drive();
+                    break;
+                case 3:
+                    Console.WriteLine("Im a motorcycle with a side cart. or a three wheeler. You decide!");
+                    IVehicle threewheeler = VehicleFactory.GetVehicle(result);
+                    threewheeler.Drive();
+                    break;
+                case 4:
+                    Console.WriteLine("I could be a few different things. Lets clarify.");
+                    Console.WriteLine("There are several vehicles that come with four wheels. Pick a number that best fits your vehicle.");
+                    Console.WriteLine("1. You have a Car.");
+                    Console.WriteLine("2. You have an Suv");
+                    Console.WriteLine("3. You have a Truck");
+
+                    input2 = int.TryParse(Console.ReadLine(), out int result2);
+                    if (input2 == false)
+                    {
+                        Console.WriteLine("Not a valid input. Please try again with the correct option. Enter: 1, 2, or 3.");
+                    }
+                    if (result2 < 1 || result2 > 3)
+                    {
+                        Console.WriteLine("Not a valid input. Please try again with the correct option. Enter: 1, 2, or 3.");
+                    }
+                    else
+                    {                        
+                        if(result2 == 1 )
+                        {
+                            VehicleFactory.CreateVehicleOfFourWheels(result2);
+                            
+                        }
+                        if (result2 == 2)
+                        {
+                            VehicleFactory.CreateVehicleOfFourWheels(result2);
+                        }
+                        if (result2 == 3)
+                        {
+                            VehicleFactory.CreateVehicleOfFourWheels(result2);
+                        }
+                    }
+                    
+                    break;
+                case 6:
+                    Console.WriteLine("Im a dually for dual purpose");
+                    IVehicle dually = VehicleFactory.GetVehicle(result);
+                    dually.Drive();
+                    break;
+                case 18:
+                    Console.WriteLine("Im a big rig :D");
+                    IVehicle bigrig = VehicleFactory.GetVehicle(result);
+                    bigrig.Drive();
+                    break;
+                default:
+                    Console.WriteLine("I'm not sure I have heard of that vehicle.");
+                    break;
+            }   
+            Console.WriteLine("----------------------------------");
+            
+            
         }
     }
 }
