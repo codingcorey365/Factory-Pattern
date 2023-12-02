@@ -100,20 +100,22 @@ namespace FactoryPattern
                         Console.WriteLine("Not a valid input. Please try again with the correct option. Enter: 1, 2, or 3.");
                     }
                     else
-                    {                        
-                        if(result2 == 1 )
-                        {
-                            VehicleFactory.CreateVehicleOfFourWheels(result2);
-                            
-                        }
-                        if (result2 == 2)
-                        {
-                            VehicleFactory.CreateVehicleOfFourWheels(result2);
-                        }
-                        if (result2 == 3)
-                        {
-                            VehicleFactory.CreateVehicleOfFourWheels(result2);
-                        }
+                    {
+
+                        VehicleFactory.CreateVehicleOfFourWheels(result2);
+                        //if(result2 == 1 )
+                        //{
+                        //    VehicleFactory.CreateVehicleOfFourWheels(result2);
+
+                        //}
+                        //if (result2 == 2)
+                        //{
+                        //    VehicleFactory.CreateVehicleOfFourWheels(result2);
+                        //}
+                        //if (result2 == 3)
+                        //{
+                        //    VehicleFactory.CreateVehicleOfFourWheels(result2);
+                        //}
                     }
                     
                     break;

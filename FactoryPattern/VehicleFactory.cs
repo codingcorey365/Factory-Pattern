@@ -18,22 +18,22 @@ namespace FactoryPattern
             {
                 case 1:
                     return new Unicycle();
-                    break;
+                   
                 case 2:
                     return new Motorcyle();
-                    break;
+                   
                 case 3:
                     return new ThreeWheeler();
-                    break;
+                   
                 case 6:
                     return new Truck();
-                    break;
+                   
                 case 18:
                     return new BigRig();
-                    break;
+                   
                 default:
                     return new Car();
-                    break;
+                   
             }
         }
 
@@ -45,23 +45,23 @@ namespace FactoryPattern
             switch (result2)
             {
                 case 1:
-                    return new Car();
-                    IVehicle car = VehicleFactory.CreateVehicleOfFourWheels(result2);
+                    IVehicle car = new Suv();
                     car.Drive();
-                    break;
-                case 2:
-                    return new Suv();
-                    IVehicle suv = VehicleFactory.CreateVehicleOfFourWheels(result2);
+                    return new Car();
+                    
+                case 2:                    
+                    IVehicle suv = new Suv();
                     suv.Drive();
-                    break;
+                    return suv;
+
                 case 3:
-                    return new Truck();
-                    IVehicle truck = VehicleFactory.CreateVehicleOfFourWheels(result2);
+                   IVehicle truck = new Suv();
                    truck.Drive();
-                    break;
+                   return new Truck();
+
                 default:
                     return new Car();
-                    break;
+                    
             }
         }
         
