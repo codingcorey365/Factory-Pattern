@@ -89,6 +89,7 @@ namespace FactoryPattern
                     Console.WriteLine("1. You have a Car.");
                     Console.WriteLine("2. You have an Suv");
                     Console.WriteLine("3. You have a Truck");
+                    Thread.Sleep(1000);
 
                     input2 = int.TryParse(Console.ReadLine(), out int result2);
                     if (input2 == false)
